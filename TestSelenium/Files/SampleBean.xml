@@ -1,0 +1,16 @@
+<SimpleBean>
+	<firstName>Rohan</firstName>
+	<lastName>Daye</lastName>
+	<teacher>
+		<x>aa</x>
+		<y>bb3</y>
+	</teacher>
+	<teacher>
+		<x>cc</x>
+		<y>cc</y>
+	</teacher>
+	<teacher>
+		<x>dd</x>
+		<y>sds</y>
+	</teacher>
+</SimpleBean>

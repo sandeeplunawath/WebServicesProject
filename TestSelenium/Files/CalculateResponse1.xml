@@ -1,0 +1,179 @@
+<s:Envelope xmlns:s="http://schemas.xmlsoap.org/soap/envelope/">
+   <s:Body>
+      <CalculateResponse xmlns="http://services.carmax.org">
+         <CalculateResult xmlns:a="http://schemas.datacontract.org/2004/07/CarMax.Services.Tafe.Contract" xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+            <a:Items>
+               <a:RuleCalculationResult>
+                  <a:CalculationId>1</a:CalculationId>
+                  <a:CalculationType>Fee</a:CalculationType>
+                  <a:Description>VA Processing Fee</a:Description>
+                  <a:DisplayName>VA Processing Fee</a:DisplayName>
+                  <a:IsCalculated>true</a:IsCalculated>
+                  <a:IsInternal>false</a:IsInternal>
+                  <a:Name>VA.Processing.Fee</a:Name>
+                  <a:RuleId>4</a:RuleId>
+                  <a:RuleInstanceId>40015</a:RuleInstanceId>
+                  <a:StatusId>1</a:StatusId>
+                  <a:Tag i:nil="true"/>
+                  <a:Trace>[VA.Processing.Fee=299.0000000000]</a:Trace>
+                  <a:Value>299.00</a:Value>
+               </a:RuleCalculationResult>
+               <a:RuleCalculationResult>
+                  <a:CalculationId>3</a:CalculationId>
+                  <a:CalculationType>Fee</a:CalculationType>
+                  <a:Description>VA Registration Fee 1Year</a:Description>
+                  <a:DisplayName>VA Registration Fee 1Year</a:DisplayName>
+                  <a:IsCalculated>true</a:IsCalculated>
+                  <a:IsInternal>false</a:IsInternal>
+                  <a:Name>VA.Registration.Fee.1Year</a:Name>
+                  <a:RuleId>28</a:RuleId>
+                  <a:RuleInstanceId>40038</a:RuleInstanceId>
+                  <a:StatusId>1</a:StatusId>
+                  <a:Tag i:nil="true"/>
+                  <a:Trace>VA.Registration.Truck.1YR.Weight.GreaterThan.6500 --> [VA.Registration.Truck.1YR.Weight.GreaterThan.6500=51.7500000000]</a:Trace>
+                  <a:Value>51.75</a:Value>
+               </a:RuleCalculationResult>
+               <a:RuleCalculationResult>
+                  <a:CalculationId>1</a:CalculationId>
+                  <a:CalculationType>Fee</a:CalculationType>
+                  <a:Description>VA Title Fee</a:Description>
+                  <a:DisplayName>VA Title Fee</a:DisplayName>
+                  <a:IsCalculated>true</a:IsCalculated>
+                  <a:IsInternal>false</a:IsInternal>
+                  <a:Name>VA.Title.Fee</a:Name>
+                  <a:RuleId>37</a:RuleId>
+                  <a:RuleInstanceId>46222</a:RuleInstanceId>
+                  <a:StatusId>1</a:StatusId>
+                  <a:Tag i:nil="true"/>
+                  <a:Trace>[VA.Title.Fee=15.0000000000]</a:Trace>
+                  <a:Value>15.00</a:Value>
+               </a:RuleCalculationResult>
+               <a:RuleCalculationResult>
+                  <a:CalculationId>3</a:CalculationId>
+                  <a:CalculationType>Tax</a:CalculationType>
+                  <a:Description>VA Business License Tax State</a:Description>
+                  <a:DisplayName>VA Business License Tax State</a:DisplayName>
+                  <a:IsCalculated>true</a:IsCalculated>
+                  <a:IsInternal>false</a:IsInternal>
+                  <a:Name>VA.Business.License.Tax.State</a:Name>
+                  <a:RuleId>22</a:RuleId>
+                  <a:RuleInstanceId>40032</a:RuleInstanceId>
+                  <a:StatusId>1</a:StatusId>
+                  <a:Tag i:nil="true"/>
+                  <a:Trace>VA.Business.License.Tax.State.Internal --> [VA.BPOL.Base=15299]*[VA.BPOL.Tax.Rate=0.0019]</a:Trace>
+                  <a:Value>29.07</a:Value>
+               </a:RuleCalculationResult>
+               <a:RuleCalculationResult>
+                  <a:CalculationId>3</a:CalculationId>
+                  <a:CalculationType>Rate</a:CalculationType>
+                  <a:Description>VA Business License Tax Rate</a:Description>
+                  <a:DisplayName>VA Business License Tax Rate</a:DisplayName>
+                  <a:IsCalculated>true</a:IsCalculated>
+                  <a:IsInternal>false</a:IsInternal>
+                  <a:Name>VA.Business.License.Tax.Rate</a:Name>
+                  <a:RuleId>47314</a:RuleId>
+                  <a:RuleInstanceId>41603</a:RuleInstanceId>
+                  <a:StatusId>1</a:StatusId>
+                  <a:Tag i:nil="true"/>
+                  <a:Trace>VA.BPOL.Tax.Rate --> VA.BPOL.Tax.Rate.Chesterfield.County --> [VA.BPOL.Tax.Rate.Chesterfield.County=0.0019000000]</a:Trace>
+                  <a:Value>0.0019</a:Value>
+               </a:RuleCalculationResult>
+               <a:RuleCalculationResult>
+                  <a:CalculationId>3</a:CalculationId>
+                  <a:CalculationType>Rate</a:CalculationType>
+                  <a:Description>VA Vehicle Sales Tax Rate State</a:Description>
+                  <a:DisplayName>VA Vehicle Sales Tax Rate State</a:DisplayName>
+                  <a:IsCalculated>true</a:IsCalculated>
+                  <a:IsInternal>false</a:IsInternal>
+                  <a:Name>VA.Vehicle.Sales.Tax.Rate.State</a:Name>
+                  <a:RuleId>143</a:RuleId>
+                  <a:RuleInstanceId>40085</a:RuleInstanceId>
+                  <a:StatusId>1</a:StatusId>
+                  <a:Tag i:nil="true"/>
+                  <a:Trace>VA.Sales.Tax.Rate --> [VA.Sales.Tax.Rate=0.0415000000]</a:Trace>
+                  <a:Value>0.04150</a:Value>
+               </a:RuleCalculationResult>
+               <a:RuleCalculationResult>
+                  <a:CalculationId>3</a:CalculationId>
+                  <a:CalculationType>Tax</a:CalculationType>
+                  <a:Description>VA Vehicle Sales Tax State</a:Description>
+                  <a:DisplayName>VA Vehicle Sales Tax State</a:DisplayName>
+                  <a:IsCalculated>true</a:IsCalculated>
+                  <a:IsInternal>false</a:IsInternal>
+                  <a:Name>VA.Vehicle.Sales.Tax.State</a:Name>
+                  <a:RuleId>7</a:RuleId>
+                  <a:RuleInstanceId>40018</a:RuleInstanceId>
+                  <a:StatusId>1</a:StatusId>
+                  <a:Tag i:nil="true"/>
+                  <a:Trace>VA.Vehicle.Sales.Tax.State.Base --> Comparing [VA.All.Sales.Tax.State:634.91 > VA.Vehicle.Sales.Tax.Base.Minimum:75.00, VA.Vehicle.Sales.Tax.State.Min.Treated:62.59, VA.Vehicle.Sales.Tax.State.Min.NotTreated:622.50]=622.50</a:Trace>
+                  <a:Value>622.50</a:Value>
+               </a:RuleCalculationResult>
+               <a:RuleCalculationResult>
+                  <a:CalculationId>3</a:CalculationId>
+                  <a:CalculationType>Tax</a:CalculationType>
+                  <a:Description>VA Processing Fee Tax State</a:Description>
+                  <a:DisplayName>VA Processing Fee Tax State</a:DisplayName>
+                  <a:IsCalculated>true</a:IsCalculated>
+                  <a:IsInternal>false</a:IsInternal>
+                  <a:Name>VA.Processing.Fee.Tax.State</a:Name>
+                  <a:RuleId>9</a:RuleId>
+                  <a:RuleInstanceId>40020</a:RuleInstanceId>
+                  <a:StatusId>1</a:StatusId>
+                  <a:Tag i:nil="true"/>
+                  <a:Trace>VA.Processing.Fee.Tax.State.Base --> [Processing.Fee=299.00]*[VA.Sales.Tax.Rate=0.04150]</a:Trace>
+                  <a:Value>12.41</a:Value>
+               </a:RuleCalculationResult>
+               <a:RuleCalculationResult>
+                  <a:CalculationId>1</a:CalculationId>
+                  <a:CalculationType>Fee</a:CalculationType>
+                  <a:Description>VA Transfer Plate Fee</a:Description>
+                  <a:DisplayName>VA Transfer Plate Fee</a:DisplayName>
+                  <a:IsCalculated>true</a:IsCalculated>
+                  <a:IsInternal>false</a:IsInternal>
+                  <a:Name>VA.Transfer.Plate.Fee</a:Name>
+                  <a:RuleId>39</a:RuleId>
+                  <a:RuleInstanceId>40049</a:RuleInstanceId>
+                  <a:StatusId>1</a:StatusId>
+                  <a:Tag i:nil="true"/>
+                  <a:Trace>[VA.Transfer.Plate.Fee=2.0000000000]</a:Trace>
+                  <a:Value>2.00</a:Value>
+               </a:RuleCalculationResult>
+               <a:RuleCalculationResult>
+                  <a:CalculationId>3</a:CalculationId>
+                  <a:CalculationType>Rate</a:CalculationType>
+                  <a:Description>VA Processing Fee Tax Rate State</a:Description>
+                  <a:DisplayName>VA Processing Fee Tax Rate State</a:DisplayName>
+                  <a:IsCalculated>true</a:IsCalculated>
+                  <a:IsInternal>false</a:IsInternal>
+                  <a:Name>VA.Processing.Fee.Tax.Rate.State</a:Name>
+                  <a:RuleId>47301</a:RuleId>
+                  <a:RuleInstanceId>41590</a:RuleInstanceId>
+                  <a:StatusId>1</a:StatusId>
+                  <a:Tag i:nil="true"/>
+                  <a:Trace>VA.Sales.Tax.Rate --> [VA.Sales.Tax.Rate=0.0415000000]</a:Trace>
+                  <a:Value>0.04150</a:Value>
+               </a:RuleCalculationResult>
+               <a:RuleCalculationResult>
+                  <a:CalculationId>1</a:CalculationId>
+                  <a:CalculationType>Fee</a:CalculationType>
+                  <a:Description>VA Online Filing Fee</a:Description>
+                  <a:DisplayName>VA Online Filing Fee</a:DisplayName>
+                  <a:IsCalculated>true</a:IsCalculated>
+                  <a:IsInternal>false</a:IsInternal>
+                  <a:Name>VA.Online.Filing.Fee</a:Name>
+                  <a:RuleId>38</a:RuleId>
+                  <a:RuleInstanceId>48410</a:RuleInstanceId>
+                  <a:StatusId>1</a:StatusId>
+                  <a:Tag i:nil="true"/>
+                  <a:Trace>[VA.Online.Filing.Fee=4.0000000000]</a:Trace>
+                  <a:Value>4.00</a:Value>
+               </a:RuleCalculationResult>
+            </a:Items>
+            <a:MissingInputs/>
+            <a:RuleCalculationTraces/>
+            <a:RuleLogs/>
+            <a:ValidationErrors/>
+         </CalculateResult>
+      </CalculateResponse>
+   </s:Body>
+</s:Envelope>

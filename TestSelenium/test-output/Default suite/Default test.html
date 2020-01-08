@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Default test</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>1/1/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>0/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Tue Dec 31 21:03:40 IST 2019</td>
+<td>Started on:</td><td>Tue Jan 07 18:36:47 IST 2020</td>
 </tr>
-<tr><td>Total time:</td><td>47 seconds (47343 ms)</td>
+<tr><td>Total time:</td><td>0 seconds (597 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -76,14 +76,21 @@ function toggleAllBoxes() {
 </tr>
 <tr>
 <td title='XMLClassFiles.XMLDeseralizeToClass.Sample_Person()'><b>Sample_Person</b><br>Test class: XMLClassFiles.XMLDeseralizeToClass</td>
-<td><div><pre>com.fasterxml.jackson.databind.exc.UnrecognizedPropertyException: Unrecognized field &quot;RuleCalculationResult&quot; (class XMLClassFiles.ItemsClass), not marked as ignorable (one known property: &quot;aRuleCalculationResult&quot;])
- at [Source: (StringReader); line: 7, column: 34] (through reference chain: XMLClassFiles.EnvelopeClass[&quot;Body&quot;]-&gt;java.util.ArrayList[0]-&gt;XMLClassFiles.BodyClass[&quot;CalculateResponse&quot;]-&gt;java.util.ArrayList[0]-&gt;XMLClassFiles.CcalculateResponse[&quot;CalculateResult&quot;]-&gt;java.util.ArrayList[0]-&gt;XMLClassFiles.CalculateResultClass[&quot;Items&quot;]-&gt;java.util.ArrayList[0]-&gt;XMLClassFiles.ItemsClass[&quot;RuleCalculationResult&quot;])
-	at com.fasterxml.jackson.databind.exc.UnrecognizedPropertyException.from(UnrecognizedPropertyException.java:61)
-	at com.fasterxml.jackson.databind.DeserializationContext.handleUnknownProperty(DeserializationContext.java:823)
-	at com.fasterxml.jackson.databind.deser.std.StdDeserializer.handleUnknownProperty(StdDeserializer.java:1153)
-	at com.fasterxml.jackson.databind.deser.BeanDeserializerBase.handleUnknownProperty(BeanDeserializerBase.java:1589)
-	at com.fasterxml.jackson.databind.deser.BeanDeserializerBase.handleUnknownVanilla(BeanDeserializerBase.java:1567)
-	at com.fasterxml.jackson.databind.deser.BeanDeserializer.vanillaDeserialize(BeanDeserializer.java:294)
+<td><div><pre>com.fasterxml.jackson.databind.exc.MismatchedInputException: Cannot construct instance of `XMLClassFiles.RuleCalculationResultClass` (although at least one Creator exists): no String-argument constructor/factory method to deserialize from String value (&apos;[VA.Processing.Fee=299.0000000000]&apos;)
+ at [Source: (StringReader); line: 18, column: 60] (through reference chain: XMLClassFiles.EnvelopeClass[&quot;Body&quot;]-&gt;java.util.ArrayList[0]-&gt;XMLClassFiles.BodyClass[&quot;CalculateResponse&quot;]-&gt;java.util.ArrayList[0]-&gt;XMLClassFiles.CalculateResponseClass[&quot;CalculateResult&quot;]-&gt;java.util.ArrayList[0]-&gt;XMLClassFiles.CalculateResultClass[&quot;Items&quot;]-&gt;java.util.ArrayList[0]-&gt;XMLClassFiles.ItemsClass[&quot;RuleCalculationResult&quot;]-&gt;java.util.ArrayList[1])
+	at com.fasterxml.jackson.databind.exc.MismatchedInputException.from(MismatchedInputException.java:63)
+	at com.fasterxml.jackson.databind.DeserializationContext.reportInputMismatch(DeserializationContext.java:1343)
+	at com.fasterxml.jackson.databind.DeserializationContext.handleMissingInstantiator(DeserializationContext.java:1032)
+	at com.fasterxml.jackson.databind.deser.ValueInstantiator._createFromStringFallbacks(ValueInstantiator.java:371)
+	at com.fasterxml.jackson.databind.deser.std.StdValueInstantiator.createFromString(StdValueInstantiator.java:323)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializerBase.deserializeFromString(BeanDeserializerBase.java:1373)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer._deserializeOther(BeanDeserializer.java:171)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.deserialize(BeanDeserializer.java:161)
+	at com.fasterxml.jackson.databind.deser.std.CollectionDeserializer.deserialize(CollectionDeserializer.java:286)
+	at com.fasterxml.jackson.databind.deser.std.CollectionDeserializer.deserialize(CollectionDeserializer.java:245)
+	at com.fasterxml.jackson.databind.deser.std.CollectionDeserializer.deserialize(CollectionDeserializer.java:27)
+	at com.fasterxml.jackson.databind.deser.impl.FieldProperty.deserializeAndSet(FieldProperty.java:136)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.vanillaDeserialize(BeanDeserializer.java:288)
 	at com.fasterxml.jackson.databind.deser.BeanDeserializer.deserialize(BeanDeserializer.java:151)
 	at com.fasterxml.jackson.dataformat.xml.deser.WrapperHandlingDeserializer.deserialize(WrapperHandlingDeserializer.java:113)
 	at com.fasterxml.jackson.databind.deser.std.CollectionDeserializer.deserialize(CollectionDeserializer.java:286)
@@ -116,7 +123,7 @@ function toggleAllBoxes() {
 	at com.fasterxml.jackson.dataformat.xml.deser.WrapperHandlingDeserializer.deserialize(WrapperHandlingDeserializer.java:113)
 	at com.fasterxml.jackson.databind.ObjectMapper._readMapAndClose(ObjectMapper.java:4013)
 	at com.fasterxml.jackson.databind.ObjectMapper.readValue(ObjectMapper.java:3004)
-	at XMLClassFiles.XMLDeseralizeToClass.Sample_Person(XMLDeseralizeToClass.java:34)
+	at XMLClassFiles.XMLDeseralizeToClass.Sample_Person(XMLDeseralizeToClass.java:36)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -141,15 +148,22 @@ function toggleAllBoxes() {
 	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-</pre></div><a href='#' onClick='toggleBox("stack-trace94157402", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace94157402'><pre>com.fasterxml.jackson.databind.exc.UnrecognizedPropertyException: Unrecognized field &quot;RuleCalculationResult&quot; (class XMLClassFiles.ItemsClass), not marked as ignorable (one known property: &quot;aRuleCalculationResult&quot;])
- at [Source: (StringReader); line: 7, column: 34] (through reference chain: XMLClassFiles.EnvelopeClass[&quot;Body&quot;]-&gt;java.util.ArrayList[0]-&gt;XMLClassFiles.BodyClass[&quot;CalculateResponse&quot;]-&gt;java.util.ArrayList[0]-&gt;XMLClassFiles.CcalculateResponse[&quot;CalculateResult&quot;]-&gt;java.util.ArrayList[0]-&gt;XMLClassFiles.CalculateResultClass[&quot;Items&quot;]-&gt;java.util.ArrayList[0]-&gt;XMLClassFiles.ItemsClass[&quot;RuleCalculationResult&quot;])
-	at com.fasterxml.jackson.databind.exc.UnrecognizedPropertyException.from(UnrecognizedPropertyException.java:61)
-	at com.fasterxml.jackson.databind.DeserializationContext.handleUnknownProperty(DeserializationContext.java:823)
-	at com.fasterxml.jackson.databind.deser.std.StdDeserializer.handleUnknownProperty(StdDeserializer.java:1153)
-	at com.fasterxml.jackson.databind.deser.BeanDeserializerBase.handleUnknownProperty(BeanDeserializerBase.java:1589)
-	at com.fasterxml.jackson.databind.deser.BeanDeserializerBase.handleUnknownVanilla(BeanDeserializerBase.java:1567)
-	at com.fasterxml.jackson.databind.deser.BeanDeserializer.vanillaDeserialize(BeanDeserializer.java:294)
+</pre></div><a href='#' onClick='toggleBox("stack-trace1260467793", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1260467793'><pre>com.fasterxml.jackson.databind.exc.MismatchedInputException: Cannot construct instance of `XMLClassFiles.RuleCalculationResultClass` (although at least one Creator exists): no String-argument constructor/factory method to deserialize from String value (&apos;[VA.Processing.Fee=299.0000000000]&apos;)
+ at [Source: (StringReader); line: 18, column: 60] (through reference chain: XMLClassFiles.EnvelopeClass[&quot;Body&quot;]-&gt;java.util.ArrayList[0]-&gt;XMLClassFiles.BodyClass[&quot;CalculateResponse&quot;]-&gt;java.util.ArrayList[0]-&gt;XMLClassFiles.CalculateResponseClass[&quot;CalculateResult&quot;]-&gt;java.util.ArrayList[0]-&gt;XMLClassFiles.CalculateResultClass[&quot;Items&quot;]-&gt;java.util.ArrayList[0]-&gt;XMLClassFiles.ItemsClass[&quot;RuleCalculationResult&quot;]-&gt;java.util.ArrayList[1])
+	at com.fasterxml.jackson.databind.exc.MismatchedInputException.from(MismatchedInputException.java:63)
+	at com.fasterxml.jackson.databind.DeserializationContext.reportInputMismatch(DeserializationContext.java:1343)
+	at com.fasterxml.jackson.databind.DeserializationContext.handleMissingInstantiator(DeserializationContext.java:1032)
+	at com.fasterxml.jackson.databind.deser.ValueInstantiator._createFromStringFallbacks(ValueInstantiator.java:371)
+	at com.fasterxml.jackson.databind.deser.std.StdValueInstantiator.createFromString(StdValueInstantiator.java:323)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializerBase.deserializeFromString(BeanDeserializerBase.java:1373)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer._deserializeOther(BeanDeserializer.java:171)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.deserialize(BeanDeserializer.java:161)
+	at com.fasterxml.jackson.databind.deser.std.CollectionDeserializer.deserialize(CollectionDeserializer.java:286)
+	at com.fasterxml.jackson.databind.deser.std.CollectionDeserializer.deserialize(CollectionDeserializer.java:245)
+	at com.fasterxml.jackson.databind.deser.std.CollectionDeserializer.deserialize(CollectionDeserializer.java:27)
+	at com.fasterxml.jackson.databind.deser.impl.FieldProperty.deserializeAndSet(FieldProperty.java:136)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.vanillaDeserialize(BeanDeserializer.java:288)
 	at com.fasterxml.jackson.databind.deser.BeanDeserializer.deserialize(BeanDeserializer.java:151)
 	at com.fasterxml.jackson.dataformat.xml.deser.WrapperHandlingDeserializer.deserialize(WrapperHandlingDeserializer.java:113)
 	at com.fasterxml.jackson.databind.deser.std.CollectionDeserializer.deserialize(CollectionDeserializer.java:286)
@@ -182,7 +196,7 @@ function toggleAllBoxes() {
 	at com.fasterxml.jackson.dataformat.xml.deser.WrapperHandlingDeserializer.deserialize(WrapperHandlingDeserializer.java:113)
 	at com.fasterxml.jackson.databind.ObjectMapper._readMapAndClose(ObjectMapper.java:4013)
 	at com.fasterxml.jackson.databind.ObjectMapper.readValue(ObjectMapper.java:3004)
-	at XMLClassFiles.XMLDeseralizeToClass.Sample_Person(XMLDeseralizeToClass.java:34)
+	at XMLClassFiles.XMLDeseralizeToClass.Sample_Person(XMLDeseralizeToClass.java:36)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -208,19 +222,6 @@ function toggleAllBoxes() {
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 </pre></div></td>
-<td>47</td>
-<td>XMLClassFiles.XMLDeseralizeToClass@10e92f8f</td></tr>
-</table><p>
-<table width='100%' border='1' class='invocation-passed'>
-<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
-<tr><td><b>Test method</b></td>
-<td width="30%"><b>Exception</b></td>
-<td width="10%"><b>Time (seconds)</b></td>
-<td><b>Instance</b></td>
-</tr>
-<tr>
-<td title='XMLClassFiles.XMLDeseralizeToClass.Sample_Person_Backup()'><b>Sample_Person_Backup</b><br>Test class: XMLClassFiles.XMLDeseralizeToClass</td>
-<td></td>
 <td>0</td>
 <td>XMLClassFiles.XMLDeseralizeToClass@10e92f8f</td></tr>
 </table><p>
