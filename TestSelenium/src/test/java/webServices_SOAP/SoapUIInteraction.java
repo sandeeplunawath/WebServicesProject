@@ -35,6 +35,7 @@ public class SoapUIInteraction {
 			// Set the necessary header fields
 			java.net.URL url = new java.net.URL(soapURL);
 			java.net.URLConnection conn = url.openConnection();
+			
 			conn.setRequestProperty("SOAPAction", soapURL);
 			conn.setDoOutput(true);
 			// Send the request
@@ -48,7 +49,11 @@ public class SoapUIInteraction {
 				//System.out.println(line); /*jEdit: print(line); */ 
 				responseData = line;	
 			}
-		} catch (Exception e) {}
+		} catch (Exception e) {
+			
+			System.out.println(e.getMessage());
+			System.out.println(e.getLocalizedMessage());
+		}
 
 		return responseData;
 

@@ -21,7 +21,7 @@ public class XMLDeseralizeToClass {
 	}
 	
 
-	@Test
+	//@Test
 	public void Sample_Person() throws IOException {	
 
 		
@@ -44,21 +44,32 @@ public class XMLDeseralizeToClass {
 		
 		
 	}
-	//@Test
-	public void Sample_Person_Backup() throws IOException {	
+	
+	@Test
+	public void ConvertClassObjectToString() throws IOException {	
 
 		
 		XmlMapper xmlMapper = new XmlMapper();	
 		
-		String xmlContent = ReadDataFromXMLFileAndAssignRetunAsString(System.getProperty("user.dir") +"/Files/CalculateResponse.xml");
+		String xmlContent = ReadDataFromXMLFileAndAssignRetunAsString(System.getProperty("user.dir") +"/Files/CalculateResponse1.xml");
+		xmlContent = xmlContent
+		.replaceAll("<s:", "<")
+		.replaceAll("</s:", "</")
+		.replaceAll("<a:", "<")
+		.replaceAll("</a:", "</")
+		.replaceAll("<Tag i:nil=\"true\"/>"," <Tag>null</Tag>")
 		
-		EnvelopeClass value  = xmlMapper.readValue(xmlContent, EnvelopeClass.class);	   
-		System.out.println(value);
+		;
 		
 		
+		EnvelopeClass value  = xmlMapper.readValue(xmlContent, EnvelopeClass.class);	
+		List<RuleCalculationResultClass>  objte =  value.Body.get(0).CalculateResponse.get(0).CalculateResult.get(0).Items.get(0).RuleCalculationResult;
+		
+		
+		 String xml = xmlMapper.writeValueAsString(value);
+		 System.out.println(xml);
 	}
-
-
+	
 	public String ReadDataFromXMLFileAndAssignRetunAsString(String filePath)
 	{
 		String XML_STRING = null;

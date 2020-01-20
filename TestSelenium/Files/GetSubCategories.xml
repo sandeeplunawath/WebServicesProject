@@ -1,0 +1,43 @@
+	<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:res="http://ressoa.aa.com/wsdl/Resolution/ResolutionDiscoveryV2" xmlns:res1="http://ressoa.aa.com/xsd/ResolutionDiscoveryV1">
+	   <soapenv:Header/>
+	   <soapenv:Body>
+	      <res:discoverCustomerResolutions>
+	         <resolutionDiscoveryReq>
+	            <!--Optional:-->
+	            <RetrieveResolutionReq>
+	               <!--Zero or more repetitions:-->
+	               <res1:ClaimSet>
+	                  <!--Optional:-->
+	                  <res1:ClaimType>Inflight - IFE &amp; Electronics</res1:ClaimType>
+	                  <!--Zero or more repetitions:-->
+	                  
+	                  <!--Zero or more repetitions:-->                 
+	               </res1:ClaimSet>
+	               <!--0 to 5 repetitions:-->
+	              
+	               <!--Optional:-->	               
+	               
+	            </RetrieveResolutionReq>
+	            <!--Optional:-->
+	             <POS>
+	               <!--Zero or more repetitions:-->
+	               <Source  >
+	                  <!--Optional:-->
+	                  <RequestorID>
+	                     <!--Optional:-->
+	                     <ID>Lenovo07061804</ID>
+	                     <!--Optional:-->                     
+	                     <!--Optional:-->
+	                     <Type>EVL</Type>
+	                  </RequestorID>
+	                  <!--Optional:-->
+	                 
+	                  <!--Optional:-->
+	                  
+	               </Source>
+	            </POS>
+	         </resolutionDiscoveryReq>
+	         <applicationInfo  TimeStamp="2016-05-31T14:32:12.264Z" AltLangID="xyz" Version="1.0"  TransactionIdentifier="transIdentifier" />
+	      </res:discoverCustomerResolutions>
+	   </soapenv:Body>
+	</soapenv:Envelope>

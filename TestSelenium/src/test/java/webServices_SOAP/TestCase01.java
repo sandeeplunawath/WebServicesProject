@@ -1,11 +1,19 @@
 package webServices_SOAP;
 
+import static io.restassured.RestAssured.given;
+
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.PrintWriter;
 import org.apache.commons.io.FileUtils;
+import org.apache.commons.io.IOUtils;
 import org.testng.annotations.Test;
 
+import io.restassured.RestAssured;
+import io.restassured.http.Method;
+import io.restassured.path.xml.XmlPath;
+import io.restassured.response.Response;
 import junit.framework.Assert;
 /*import utils.ExcelInteractions;*/
 //import utils.ReadExcel;
@@ -13,7 +21,82 @@ import webServices_SOAP.SoapUIInteraction;
 
 public class TestCase01 {
 
-	@Test
+	//@Test
+	public void GetSOAPMethod1() throws Exception {
+
+		String soapURL = "https://rdtafeqa.carmax.org/tafe/v2/Service.svc?wsdl";
+		String filePath =  System.getProperty("user.dir") +"/Files/samplerequest.xml";	
+		
+		
+	        FileInputStream fileInputStream = new FileInputStream(new File(filePath));
+	         RestAssured.baseURI=soapURL;
+
+	         Response response=given()
+	        		 .request(Method.GET)
+	                ;
+
+	        XmlPath jsXpath= new XmlPath(response.asString());//Converting string into xml path to assert
+	       
+	        String rate=jsXpath.getString("GetConversionRateResult");
+	        System.out.println("rate returned is: " +  rate);
+
+
+	}
+	
+	//@Test
+	public void GetSOAPMethod() throws Exception {
+
+		String soapURL = "http://wsf.cdyne.com/WeatherWS/Weather.asmx?WSDL";
+		String filePath =  System.getProperty("user.dir") +"/Files/GetSubCategories.xml";	
+		
+		
+	        FileInputStream fileInputStream = new FileInputStream(new File(filePath));
+	         RestAssured.baseURI=soapURL;
+
+	         Response response=given()
+	        		 .request(Method.GET)
+	                ;
+
+	        XmlPath jsXpath= new XmlPath(response.asString());//Converting string into xml path to assert
+	       
+	        String rate=jsXpath.getString("GetConversionRateResult");
+	        System.out.println("rate returned is: " +  rate);
+
+
+	}
+	
+	//@Test
+	public void postSOAPMethod() throws Exception {
+
+		String soapURL = "https://ctstsoa.stage.aa.com/ResolutionDiscoveryWeb/sca/ResolutionDiscoveryServiceV2";
+		String filePath =  System.getProperty("user.dir") +"/Files/GetSubCategories.xml";	
+		
+		
+	        FileInputStream fileInputStream = new FileInputStream(new File(filePath));
+	         RestAssured.baseURI="http://currencyconverter.kowabunga.net";
+
+	         Response response=given()
+	        		 
+	                .header("Content-Type", "text/xml")
+	                .and()
+	                .body(IOUtils.toString(fileInputStream,"UTF-8"))
+	         .when()
+	            .post("/converter.asmx")
+	         .then()
+	                .statusCode(200)
+	                .and()
+	                .log().all()
+	                .extract().response();
+
+	        XmlPath jsXpath= new XmlPath(response.asString());//Converting string into xml path to assert
+	        String rate=jsXpath.getString("GetConversionRateResult");
+	        System.out.println("rate returned is: " +  rate);
+
+
+	}
+	
+	
+	//@Test
 	public void ExecuteReasons() throws IOException
 	{
 		/*String soapURL = "https://ctstsoa.stage.aa.com/ResolutionDiscoveryWeb/sca/ResolutionDiscoveryServiceV2";
@@ -74,12 +157,18 @@ public class TestCase01 {
 	@Test
 	public void basicScript() throws IOException
 	{
-		String soapURL = "https://ctstsoa.stage.aa.com/ResolutionDiscoveryWeb/sca/ResolutionDiscoveryServiceV2";
-		String filePath =  System.getProperty("user.dir") +"/Files/GetSubCategories.xml";			
+		/*String soapURL = "https://ctstsoa.stage.aa.com/ResolutionDiscoveryWeb/sca/ResolutionDiscoveryServiceV2";
+		String filePath =  System.getProperty("user.dir") +"/Files/GetSubCategories.xml";	
+		*/
+		String soapURL = "https://rdtafeqa.carmax.org/tafe/v2/Service.svc?wsdl";
+		String filePath =  System.getProperty("user.dir") +"/Files/samplerequest.xml";	
+		
+		
+		
 		String soapXml = FileUtils.readFileToString(new File(filePath));
 		
-		soapXml= soapXml.replace("CLAIMTYPEDETAILS", "")
-				.replace("&", "&amp;");
+		/*soapXml= soapXml.replace("CLAIMTYPEDETAILS", "")
+				.replace("&", "&amp;");*/
 		SoapUIInteraction	objprocess = new SoapUIInteraction();
 		String responseData =objprocess.SoapUIProcessing(soapURL, soapXml);
 	}

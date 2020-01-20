@@ -4,6 +4,10 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
+import java.util.Random;
+
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
@@ -17,7 +21,42 @@ public class ExcelRead {
 		System.out.println("yes work");
 		ExcelRead objTest = new ExcelRead();
 		System.out.println(objTest.getCellData("SampleExcelFile.xls", "Input", 1, "storeState"));
-		
+
+	}
+
+	public static String GetSSN() {
+
+		String area;
+		String group;
+		String serial;
+		//ArrayList<String> ssn = new ArrayList<String>();
+		Random rand = new Random();
+
+		//while(ssn.size() < size){
+
+		int n = rand.nextInt(799) + 1;
+
+		NumberFormat formatter = new DecimalFormat("000");
+		area = formatter.format(n);
+
+		n = rand.nextInt(99) + 1;
+
+		formatter = new DecimalFormat("00");
+		group = formatter.format(n);
+
+		n = rand.nextInt(9999) + 1;
+
+		formatter = new DecimalFormat("0000");
+		serial = formatter.format(n);
+
+		//if(!ssn.contains(area + group + serial)) {
+		//	ssn.add(area + group + serial);
+		//}
+
+		//}
+		System.out.println("SSN: " + area +"-"+ group +"-"+ serial);	
+
+		return area + group + serial;
 	}
 	public String getCellData(String workbookpath,String sheetName,int RowNo,String colName) 
 	{

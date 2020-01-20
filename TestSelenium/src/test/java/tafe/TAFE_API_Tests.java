@@ -2,8 +2,11 @@ package tafe;
 
 import static io.restassured.RestAssured.given;
 
+import java.io.File;
+import java.io.FileInputStream;
 import java.util.HashMap;
 
+import org.apache.commons.io.IOUtils;
 import org.testng.annotations.Test;
 
 /*import com.carmax.sputnik.tafe.utils.SuiteBase;
@@ -15,6 +18,8 @@ import com.carmax.tafe.getinputobjects.Getinputs.InputResponse;*/
 import io.restassured.RestAssured;
 import io.restassured.config.RestAssuredConfig;
 import io.restassured.config.SSLConfig;
+import io.restassured.http.Method;
+import io.restassured.path.xml.XmlPath;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 
@@ -43,7 +48,7 @@ public class TAFE_API_Tests extends Suite_Base {
 	 */
 
 
-	@Test(groups = { "tafe", "api", "regression" })
+	
 	public void POSTestCase() {
 
 
@@ -167,4 +172,7 @@ public class TAFE_API_Tests extends Suite_Base {
 
 	}
 
+	
+	
+	
 }

@@ -2,66 +2,30 @@
 <testng-results skipped="0" failed="1" total="1" passed="0">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="597" started-at="2020-01-07T13:06:47Z" finished-at="2020-01-07T13:06:48Z">
+  <suite name="Default suite" duration-ms="634" started-at="2020-01-20T01:51:00Z" finished-at="2020-01-20T01:51:01Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="597" started-at="2020-01-07T13:06:47Z" finished-at="2020-01-07T13:06:48Z">
-      <class name="XMLClassFiles.XMLDeseralizeToClass">
-        <test-method status="FAIL" signature="Sample_Person()[pri:0, instance:XMLClassFiles.XMLDeseralizeToClass@10e92f8f]" name="Sample_Person" duration-ms="567" started-at="2020-01-07T18:36:47Z" finished-at="2020-01-07T18:36:48Z">
-          <exception class="com.fasterxml.jackson.databind.exc.MismatchedInputException">
+    <test name="Default test" duration-ms="634" started-at="2020-01-20T01:51:00Z" finished-at="2020-01-20T01:51:01Z">
+      <class name="XMLUtil.XMLDeseralizeToClass">
+        <test-method status="FAIL" signature="Sample2()[pri:0, instance:XMLUtil.XMLDeseralizeToClass@d8355a8]" name="Sample2" duration-ms="583" started-at="2020-01-20T07:21:01Z" finished-at="2020-01-20T07:21:01Z">
+          <exception class="com.fasterxml.jackson.databind.exc.UnrecognizedPropertyException">
             <message>
-              <![CDATA[Cannot construct instance of `XMLClassFiles.RuleCalculationResultClass` (although at least one Creator exists): no String-argument constructor/factory method to deserialize from String value ('[VA.Processing.Fee=299.0000000000]')
- at [Source: (StringReader); line: 18, column: 60] (through reference chain: XMLClassFiles.EnvelopeClass["Body"]->java.util.ArrayList[0]->XMLClassFiles.BodyClass["CalculateResponse"]->java.util.ArrayList[0]->XMLClassFiles.CalculateResponseClass["CalculateResult"]->java.util.ArrayList[0]->XMLClassFiles.CalculateResultClass["Items"]->java.util.ArrayList[0]->XMLClassFiles.ItemsClass["RuleCalculationResult"]->java.util.ArrayList[1])]]>
+              <![CDATA[Unrecognized field "Body" (class XMLUtil.Body), not marked as ignorable (one known property: "calculateResponse"])
+ at [Source: (StringReader); line: 3, column: 61] (through reference chain: XMLUtil.Body["Body"])]]>
             </message>
             <full-stacktrace>
-              <![CDATA[com.fasterxml.jackson.databind.exc.MismatchedInputException: Cannot construct instance of `XMLClassFiles.RuleCalculationResultClass` (although at least one Creator exists): no String-argument constructor/factory method to deserialize from String value ('[VA.Processing.Fee=299.0000000000]')
- at [Source: (StringReader); line: 18, column: 60] (through reference chain: XMLClassFiles.EnvelopeClass["Body"]->java.util.ArrayList[0]->XMLClassFiles.BodyClass["CalculateResponse"]->java.util.ArrayList[0]->XMLClassFiles.CalculateResponseClass["CalculateResult"]->java.util.ArrayList[0]->XMLClassFiles.CalculateResultClass["Items"]->java.util.ArrayList[0]->XMLClassFiles.ItemsClass["RuleCalculationResult"]->java.util.ArrayList[1])
-	at com.fasterxml.jackson.databind.exc.MismatchedInputException.from(MismatchedInputException.java:63)
-	at com.fasterxml.jackson.databind.DeserializationContext.reportInputMismatch(DeserializationContext.java:1343)
-	at com.fasterxml.jackson.databind.DeserializationContext.handleMissingInstantiator(DeserializationContext.java:1032)
-	at com.fasterxml.jackson.databind.deser.ValueInstantiator._createFromStringFallbacks(ValueInstantiator.java:371)
-	at com.fasterxml.jackson.databind.deser.std.StdValueInstantiator.createFromString(StdValueInstantiator.java:323)
-	at com.fasterxml.jackson.databind.deser.BeanDeserializerBase.deserializeFromString(BeanDeserializerBase.java:1373)
-	at com.fasterxml.jackson.databind.deser.BeanDeserializer._deserializeOther(BeanDeserializer.java:171)
-	at com.fasterxml.jackson.databind.deser.BeanDeserializer.deserialize(BeanDeserializer.java:161)
-	at com.fasterxml.jackson.databind.deser.std.CollectionDeserializer.deserialize(CollectionDeserializer.java:286)
-	at com.fasterxml.jackson.databind.deser.std.CollectionDeserializer.deserialize(CollectionDeserializer.java:245)
-	at com.fasterxml.jackson.databind.deser.std.CollectionDeserializer.deserialize(CollectionDeserializer.java:27)
-	at com.fasterxml.jackson.databind.deser.impl.FieldProperty.deserializeAndSet(FieldProperty.java:136)
-	at com.fasterxml.jackson.databind.deser.BeanDeserializer.vanillaDeserialize(BeanDeserializer.java:288)
+              <![CDATA[com.fasterxml.jackson.databind.exc.UnrecognizedPropertyException: Unrecognized field "Body" (class XMLUtil.Body), not marked as ignorable (one known property: "calculateResponse"])
+ at [Source: (StringReader); line: 3, column: 61] (through reference chain: XMLUtil.Body["Body"])
+	at com.fasterxml.jackson.databind.exc.UnrecognizedPropertyException.from(UnrecognizedPropertyException.java:61)
+	at com.fasterxml.jackson.databind.DeserializationContext.handleUnknownProperty(DeserializationContext.java:823)
+	at com.fasterxml.jackson.databind.deser.std.StdDeserializer.handleUnknownProperty(StdDeserializer.java:1153)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializerBase.handleUnknownProperty(BeanDeserializerBase.java:1589)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializerBase.handleUnknownVanilla(BeanDeserializerBase.java:1567)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.vanillaDeserialize(BeanDeserializer.java:294)
 	at com.fasterxml.jackson.databind.deser.BeanDeserializer.deserialize(BeanDeserializer.java:151)
-	at com.fasterxml.jackson.dataformat.xml.deser.WrapperHandlingDeserializer.deserialize(WrapperHandlingDeserializer.java:113)
-	at com.fasterxml.jackson.databind.deser.std.CollectionDeserializer.deserialize(CollectionDeserializer.java:286)
-	at com.fasterxml.jackson.databind.deser.std.CollectionDeserializer.deserialize(CollectionDeserializer.java:245)
-	at com.fasterxml.jackson.databind.deser.std.CollectionDeserializer.deserialize(CollectionDeserializer.java:27)
-	at com.fasterxml.jackson.databind.deser.impl.FieldProperty.deserializeAndSet(FieldProperty.java:136)
-	at com.fasterxml.jackson.databind.deser.BeanDeserializer.vanillaDeserialize(BeanDeserializer.java:288)
-	at com.fasterxml.jackson.databind.deser.BeanDeserializer.deserialize(BeanDeserializer.java:151)
-	at com.fasterxml.jackson.dataformat.xml.deser.WrapperHandlingDeserializer.deserialize(WrapperHandlingDeserializer.java:113)
-	at com.fasterxml.jackson.databind.deser.std.CollectionDeserializer.deserialize(CollectionDeserializer.java:286)
-	at com.fasterxml.jackson.databind.deser.std.CollectionDeserializer.deserialize(CollectionDeserializer.java:245)
-	at com.fasterxml.jackson.databind.deser.std.CollectionDeserializer.deserialize(CollectionDeserializer.java:27)
-	at com.fasterxml.jackson.databind.deser.impl.FieldProperty.deserializeAndSet(FieldProperty.java:136)
-	at com.fasterxml.jackson.databind.deser.BeanDeserializer.vanillaDeserialize(BeanDeserializer.java:288)
-	at com.fasterxml.jackson.databind.deser.BeanDeserializer.deserialize(BeanDeserializer.java:151)
-	at com.fasterxml.jackson.dataformat.xml.deser.WrapperHandlingDeserializer.deserialize(WrapperHandlingDeserializer.java:113)
-	at com.fasterxml.jackson.databind.deser.std.CollectionDeserializer.deserialize(CollectionDeserializer.java:286)
-	at com.fasterxml.jackson.databind.deser.std.CollectionDeserializer.deserialize(CollectionDeserializer.java:245)
-	at com.fasterxml.jackson.databind.deser.std.CollectionDeserializer.deserialize(CollectionDeserializer.java:27)
-	at com.fasterxml.jackson.databind.deser.impl.FieldProperty.deserializeAndSet(FieldProperty.java:136)
-	at com.fasterxml.jackson.databind.deser.BeanDeserializer.vanillaDeserialize(BeanDeserializer.java:288)
-	at com.fasterxml.jackson.databind.deser.BeanDeserializer.deserialize(BeanDeserializer.java:151)
-	at com.fasterxml.jackson.dataformat.xml.deser.WrapperHandlingDeserializer.deserialize(WrapperHandlingDeserializer.java:113)
-	at com.fasterxml.jackson.databind.deser.std.CollectionDeserializer.deserialize(CollectionDeserializer.java:286)
-	at com.fasterxml.jackson.databind.deser.std.CollectionDeserializer.deserialize(CollectionDeserializer.java:245)
-	at com.fasterxml.jackson.databind.deser.std.CollectionDeserializer.deserialize(CollectionDeserializer.java:27)
-	at com.fasterxml.jackson.databind.deser.impl.FieldProperty.deserializeAndSet(FieldProperty.java:136)
-	at com.fasterxml.jackson.databind.deser.BeanDeserializer.vanillaDeserialize(BeanDeserializer.java:288)
-	at com.fasterxml.jackson.databind.deser.BeanDeserializer.deserialize(BeanDeserializer.java:151)
-	at com.fasterxml.jackson.dataformat.xml.deser.WrapperHandlingDeserializer.deserialize(WrapperHandlingDeserializer.java:113)
 	at com.fasterxml.jackson.databind.ObjectMapper._readMapAndClose(ObjectMapper.java:4013)
 	at com.fasterxml.jackson.databind.ObjectMapper.readValue(ObjectMapper.java:3004)
-	at XMLClassFiles.XMLDeseralizeToClass.Sample_Person(XMLDeseralizeToClass.java:36)
+	at XMLUtil.XMLDeseralizeToClass.Sample2(XMLDeseralizeToClass.java:21)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -88,11 +52,11 @@
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 ]]>
             </full-stacktrace>
-          </exception> <!-- com.fasterxml.jackson.databind.exc.MismatchedInputException -->
+          </exception> <!-- com.fasterxml.jackson.databind.exc.UnrecognizedPropertyException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- Sample_Person -->
-      </class> <!-- XMLClassFiles.XMLDeseralizeToClass -->
+        </test-method> <!-- Sample2 -->
+      </class> <!-- XMLUtil.XMLDeseralizeToClass -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

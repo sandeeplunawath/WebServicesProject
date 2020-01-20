@@ -1,0 +1,619 @@
+<s:Envelope xmlns:s="http://schemas.xmlsoap.org/soap/envelope/">
+   <s:Body>
+      <Calculate xmlns="http://services.carmax.org">
+         <request xmlns:a="http://schemas.datacontract.org/2004/07/CarMax.Services.Tafe.Contract" xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+            <a:ExcludeCalculationTypes i:nil="true"/>
+            <a:InputRequest>
+               <a:ContextProperties>
+                  <a:Item>
+                     <a:key>TafeSPA</a:key>
+                     <a:value>WebClient</a:value>
+                  </a:Item>
+               </a:ContextProperties>
+               <a:CustomerState>VA</a:CustomerState>
+               <a:EffectiveDate>2019-10-10T00:00:00</a:EffectiveDate>
+               <a:Statuses i:nil="true"/>
+               <a:StoreId>7290</a:StoreId>
+               <a:StoreState>VA</a:StoreState>
+            </a:InputRequest>
+            <a:Inputs>
+               <a:InputDto>
+                  <a:DataTypeId>1</a:DataTypeId>
+                  <a:DisplayName>Order Type</a:DisplayName>
+                  <a:InputDescription>An internal categorization by the type of transaction.</a:InputDescription>
+                  <a:InputId>16</a:InputId>
+                  <a:InputName>Order.Type</a:InputName>
+                  <a:IsEnumerated>false</a:IsEnumerated>
+                  <a:IsInternal>false</a:IsInternal>
+                  <a:RuleId i:nil="true"/>
+                  <a:RuleInstanceId i:nil="true"/>
+                  <a:RuleName i:nil="true"/>
+                  <a:Tag i:nil="true"/>
+                  <a:Validation i:nil="true"/>
+                  <a:ValidationMessage>Valid Order types are Vehicle Sale, null ASsociate Purchase and Vehicle Transfer.</a:ValidationMessage>
+                  <a:Value>Vehicle Sale</a:Value>
+               </a:InputDto>
+               <a:InputDto>
+                  <a:DataTypeId>6</a:DataTypeId>
+                  <a:DisplayName>Vehicle Sales Price</a:DisplayName>
+                  <a:InputDescription>The selling price for the vehicle.</a:InputDescription>
+                  <a:InputId>6</a:InputId>
+                  <a:InputName>Vehicle.Sales.Price</a:InputName>
+                  <a:IsEnumerated>false</a:IsEnumerated>
+                  <a:IsInternal>false</a:IsInternal>
+                  <a:RuleId i:nil="true"/>
+                  <a:RuleInstanceId i:nil="true"/>
+                  <a:RuleName i:nil="true"/>
+                  <a:Tag i:nil="true"/>
+                  <a:Validation>^\d*(\.\d{0,4})?$</a:Validation>
+                  <a:ValidationMessage>Vehicle Sales Price must be an amount greater than zero. Solution: Missing vehicle sales price must be added in Automation. .</a:ValidationMessage>
+			   <a:Value>30000</a:Value>
+               </a:InputDto>
+               <a:InputDto>
+                  <a:DataTypeId>6</a:DataTypeId>
+                  <a:DisplayName>Accessory Sales Price</a:DisplayName>
+                  <a:InputDescription>The selling price for the accessory.</a:InputDescription>
+                  <a:InputId>7</a:InputId>
+                  <a:InputName>Accessory.Sales.Price</a:InputName>
+                  <a:IsEnumerated>false</a:IsEnumerated>
+                  <a:IsInternal>false</a:IsInternal>
+                  <a:RuleId i:nil="true"/>
+                  <a:RuleInstanceId i:nil="true"/>
+                  <a:RuleName i:nil="true"/>
+                  <a:Tag>1</a:Tag>
+                  <a:Validation>^\d*(\.\d{0,4})?$</a:Validation>
+                  <a:ValidationMessage>Accessory Sales Price must be an amount. Solution: Accessory sales price could not be determined. Call Solution Center.</a:ValidationMessage>
+                  <a:Value>100</a:Value>
+               </a:InputDto>
+               <a:InputDto>
+                  <a:DataTypeId>6</a:DataTypeId>
+                  <a:DisplayName>ESP Amount</a:DisplayName>
+                  <a:InputDescription>The selling price for the extended service plan.</a:InputDescription>
+                  <a:InputId>8</a:InputId>
+                  <a:InputName>ESP.Amount</a:InputName>
+                  <a:IsEnumerated>false</a:IsEnumerated>
+                  <a:IsInternal>false</a:IsInternal>
+                  <a:RuleId i:nil="true"/>
+                  <a:RuleInstanceId i:nil="true"/>
+                  <a:RuleName i:nil="true"/>
+                  <a:Tag i:nil="true"/>
+                  <a:Validation>^\d*(\.\d{0,4})?$</a:Validation>
+                  <a:ValidationMessage>ESP price must be an amount. Solution: MaxCare price could not be determined. Call Solution Center.</a:ValidationMessage>
+                  <a:Value>1000</a:Value>
+               </a:InputDto>
+               <a:InputDto>
+                  <a:DataTypeId>6</a:DataTypeId>
+                  <a:DisplayName>GAP Amount</a:DisplayName>
+                  <a:InputDescription>The premium amount for guaranteed auto protection insurance.</a:InputDescription>
+                  <a:InputId>25</a:InputId>
+                  <a:InputName>GAP.Amount</a:InputName>
+                  <a:IsEnumerated>false</a:IsEnumerated>
+                  <a:IsInternal>false</a:IsInternal>
+                  <a:RuleId i:nil="true"/>
+                  <a:RuleInstanceId i:nil="true"/>
+                  <a:RuleName i:nil="true"/>
+                  <a:Tag i:nil="true"/>
+                  <a:Validation>^\d*(\.\d{0,4})?$</a:Validation>
+                  <a:ValidationMessage>The cost go for GAP is an amount greater than or equal to $0. Solution: If GAP was chosen for this order, the premium amount could not be determined. Call Solution Center.</a:ValidationMessage>
+                  <a:Value i:nil="true"/>
+               </a:InputDto>
+               <a:InputDto>
+                  <a:DataTypeId>6</a:DataTypeId>
+                  <a:DisplayName>Dealer Rebates Incentives</a:DisplayName>
+                  <a:InputDescription>This amount is the sum of all rebates and incentives offered for a new car vehicle sale.</a:InputDescription>
+                  <a:InputId>139</a:InputId>
+                  <a:InputName>Dealer.Rebates.Incentives</a:InputName>
+                  <a:IsEnumerated>false</a:IsEnumerated>
+                  <a:IsInternal>false</a:IsInternal>
+                  <a:RuleId i:nil="true"/>
+                  <a:RuleInstanceId i:nil="true"/>
+                  <a:RuleName i:nil="true"/>
+                  <a:Tag i:nil="true"/>
+                  <a:Validation>^\d*(\.\d{0,4})?$</a:Validation>
+                  <a:ValidationMessage>Values will be in whole number or decimal</a:ValidationMessage>
+                  <a:Value i:nil="true"/>
+               </a:InputDto>
+               <a:InputDto>
+                  <a:DataTypeId>8</a:DataTypeId>
+                  <a:DisplayName>Customer State</a:DisplayName>
+                  <a:InputDescription>The State for the primary customer's address.</a:InputDescription>
+                  <a:InputId>2</a:InputId>
+                  <a:InputName>Customer.State</a:InputName>
+                  <a:IsEnumerated>false</a:IsEnumerated>
+                  <a:IsInternal>false</a:IsInternal>
+                  <a:RuleId i:nil="true"/>
+                  <a:RuleInstanceId i:nil="true"/>
+                  <a:RuleName i:nil="true"/>
+                  <a:Tag i:nil="true"/>
+                  <a:Validation>^(?i:A[LKSZRAEP]|C[AOT]|D[EC]|F[LM]|G[AU]|HI|I[ADLN]|K[SY]|LA|M[ADEHINOPST]|N[CDEHJMVY]|O[HKR]|P[ARW]|RI|S[CD]|T[NX]|UT|V[AIT]|W[AIVY])$</a:Validation>
+                  <a:ValidationMessage>Must be capitalized 2 digit state code. Verify customer's address.</a:ValidationMessage>
+                  <a:Value>VA</a:Value>
+               </a:InputDto>
+               <a:InputDto>
+                  <a:DataTypeId>8</a:DataTypeId>
+                  <a:DisplayName>Store State</a:DisplayName>
+                  <a:InputDescription>The State for the store location's address.</a:InputDescription>
+                  <a:InputId>1</a:InputId>
+                  <a:InputName>Store.State</a:InputName>
+                  <a:IsEnumerated>false</a:IsEnumerated>
+                  <a:IsInternal>false</a:IsInternal>
+                  <a:RuleId i:nil="true"/>
+                  <a:RuleInstanceId i:nil="true"/>
+                  <a:RuleName i:nil="true"/>
+                  <a:Tag i:nil="true"/>
+                  <a:Validation>^(?i:A[LKSZRAEP]|C[AOT]|D[EC]|F[LM]|G[AU]|HI|I[ADLN]|K[SY]|LA|M[ADEHINOPST]|N[CDEHJMVY]|O[HKR]|P[ARW]|RI|S[CD]|T[NX]|UT|V[AIT]|W[AIVY])$</a:Validation>
+                  <a:ValidationMessage>Must be capitalized 2 digit state code. Solution: Verify that the list of Store states only includes the state code for those states that have Carmax store locations.</a:ValidationMessage>
+                  <a:Value>VA</a:Value>
+               </a:InputDto>
+               <a:InputDto>
+                  <a:DataTypeId>1</a:DataTypeId>
+                  <a:DisplayName>Plate Type</a:DisplayName>
+                  <a:InputDescription>The type of license plate registration for the vehicle.</a:InputDescription>
+                  <a:InputId>18</a:InputId>
+                  <a:InputName>Plate.Type</a:InputName>
+                  <a:IsEnumerated>false</a:IsEnumerated>
+                  <a:IsInternal>false</a:IsInternal>
+                  <a:RuleId i:nil="true"/>
+                  <a:RuleInstanceId i:nil="true"/>
+                  <a:RuleName i:nil="true"/>
+                  <a:Tag i:nil="true"/>
+                  <a:Validation i:nil="true"/>
+                  <a:ValidationMessage>The type of plate registration must be New, Transfer or Temp Tag</a:ValidationMessage>
+                  <a:Value>Transfer</a:Value>
+               </a:InputDto>
+               <a:InputDto>
+                  <a:DataTypeId>4</a:DataTypeId>
+                  <a:DisplayName>Number Of Registration Years</a:DisplayName>
+                  <a:InputDescription>The number years for registering the vehicle.</a:InputDescription>
+                  <a:InputId>19</a:InputId>
+                  <a:InputName>Number.Of.Registration.Years</a:InputName>
+                  <a:IsEnumerated>false</a:IsEnumerated>
+                  <a:IsInternal>false</a:IsInternal>
+                  <a:RuleId i:nil="true"/>
+                  <a:RuleInstanceId i:nil="true"/>
+                  <a:RuleName i:nil="true"/>
+                  <a:Tag i:nil="true"/>
+                  <a:Validation>^-?(0|([1-9]\d*))*(\.\d+)?</a:Validation>
+                  <a:ValidationMessage>The number of years for registering the vehicle must equal 1 or 2. Solution: Verify registration options chosen or the registration fee selected. If problem persists, Call Solution Center.</a:ValidationMessage>
+                  <a:Value>2</a:Value>
+               </a:InputDto>
+               <a:InputDto>
+                  <a:DataTypeId>3</a:DataTypeId>
+                  <a:DisplayName>Temp Tag Needed</a:DisplayName>
+                  <a:InputDescription>Determines if a temporary tag is needed.</a:InputDescription>
+                  <a:InputId>51</a:InputId>
+                  <a:InputName>Temp.Tag.Needed</a:InputName>
+                  <a:IsEnumerated>false</a:IsEnumerated>
+                  <a:IsInternal>false</a:IsInternal>
+                  <a:RuleId i:nil="true"/>
+                  <a:RuleInstanceId i:nil="true"/>
+                  <a:RuleName i:nil="true"/>
+                  <a:Tag i:nil="true"/>
+                  <a:Validation>^(true|false|1|0|Yes|No|N|Y)$</a:Validation>
+                  <a:ValidationMessage>Value equal N-No  or Y-Yes</a:ValidationMessage>
+                  <a:Value i:nil="true"/>
+               </a:InputDto>
+               <a:InputDto>
+                  <a:DataTypeId>2</a:DataTypeId>
+                  <a:DisplayName>Store Location Number</a:DisplayName>
+                  <a:InputDescription>The number of the store location where the customer intends to purchase the vehicle.</a:InputDescription>
+                  <a:InputId>3</a:InputId>
+                  <a:InputName>Store.Location.Number</a:InputName>
+                  <a:IsEnumerated>false</a:IsEnumerated>
+                  <a:IsInternal>false</a:IsInternal>
+                  <a:RuleId i:nil="true"/>
+                  <a:RuleInstanceId i:nil="true"/>
+                  <a:RuleName i:nil="true"/>
+                  <a:Tag i:nil="true"/>
+                  <a:Validation>^\d{4}$</a:Validation>
+                  <a:ValidationMessage>Store Location Number must be numeric. Solution: Verify that the numeric location number is valid.</a:ValidationMessage>
+                  <a:Value>7290</a:Value>
+               </a:InputDto>
+               <a:InputDto>
+                  <a:DataTypeId>3</a:DataTypeId>
+                  <a:DisplayName>LienHolder Flag</a:DisplayName>
+                  <a:InputDescription>A flag that indicates if the sales order is financed.</a:InputDescription>
+                  <a:InputId>17</a:InputId>
+                  <a:InputName>LienHolder.Flag</a:InputName>
+                  <a:IsEnumerated>false</a:IsEnumerated>
+                  <a:IsInternal>false</a:IsInternal>
+                  <a:RuleId i:nil="true"/>
+                  <a:RuleInstanceId i:nil="true"/>
+                  <a:RuleName i:nil="true"/>
+                  <a:Tag i:nil="true"/>
+                  <a:Validation>^(true|false|1|0|Yes|No|N|Y)$</a:Validation>
+                  <a:ValidationMessage>The Lienholder flag requires a Y or N value. Call Solution Center.</a:ValidationMessage>
+                  <a:Value i:nil="true"/>
+               </a:InputDto>
+               <a:InputDto>
+                  <a:DataTypeId>1</a:DataTypeId>
+                  <a:DisplayName>Store County</a:DisplayName>
+                  <a:InputDescription>The County for the store location's address.</a:InputDescription>
+                  <a:InputId>12</a:InputId>
+                  <a:InputName>Store.County</a:InputName>
+                  <a:IsEnumerated>false</a:IsEnumerated>
+                  <a:IsInternal>false</a:IsInternal>
+                  <a:RuleId i:nil="true"/>
+                  <a:RuleInstanceId i:nil="true"/>
+                  <a:RuleName i:nil="true"/>
+                  <a:Tag i:nil="true"/>
+                  <a:Validation i:nil="true"/>
+                  <a:ValidationMessage>The County for the store location is missing or invalid. Solution: The County may not exists or is invalid for the store state code chosen. Call Solution Center.</a:ValidationMessage>
+                  <a:Value>Albemarle</a:Value>
+               </a:InputDto>
+               <a:InputDto>
+                  <a:DataTypeId>1</a:DataTypeId>
+                  <a:DisplayName>Customer County</a:DisplayName>
+                  <a:InputDescription>The County for the primary customer's address.</a:InputDescription>
+                  <a:InputId>14</a:InputId>
+                  <a:InputName>Customer.County</a:InputName>
+                  <a:IsEnumerated>false</a:IsEnumerated>
+                  <a:IsInternal>false</a:IsInternal>
+                  <a:RuleId i:nil="true"/>
+                  <a:RuleInstanceId i:nil="true"/>
+                  <a:RuleName i:nil="true"/>
+                  <a:Tag i:nil="true"/>
+                  <a:Validation i:nil="true"/>
+                  <a:ValidationMessage>The County of the Customer's residence is missing or invalid. Solution: The County may not exists or is invalid for the state chosen. Verify Customer's Address.</a:ValidationMessage>
+                  <a:Value i:nil="true"/>
+               </a:InputDto>
+               <a:InputDto>
+                  <a:DataTypeId>3</a:DataTypeId>
+                  <a:DisplayName>Appraisal Owner Flag</a:DisplayName>
+                  <a:InputDescription>This flag indicates that the customer on the order is the owner of the trade-in vehicle; therefore eligible for the a tax credit.</a:InputDescription>
+                  <a:InputId>60</a:InputId>
+                  <a:InputName>Appraisal.Owner</a:InputName>
+                  <a:IsEnumerated>false</a:IsEnumerated>
+                  <a:IsInternal>false</a:IsInternal>
+                  <a:RuleId i:nil="true"/>
+                  <a:RuleInstanceId i:nil="true"/>
+                  <a:RuleName i:nil="true"/>
+                  <a:Tag i:nil="true"/>
+                  <a:Validation>^(true|false|1|0|Yes|No|N|Y)$</a:Validation>
+                  <a:ValidationMessage>Value equal N-No  or Y-Yes</a:ValidationMessage>
+                  <a:Value i:nil="true"/>
+               </a:InputDto>
+               <a:InputDto>
+                  <a:DataTypeId>3</a:DataTypeId>
+                  <a:DisplayName>Appraisal Relative</a:DisplayName>
+                  <a:InputDescription>This flag indicates that the customer on the order is a direct relative of the owner of the trade-in vehicle; therefore eligible for the a tax credit.</a:InputDescription>
+                  <a:InputId>66</a:InputId>
+                  <a:InputName>Appraisal.Relative</a:InputName>
+                  <a:IsEnumerated>false</a:IsEnumerated>
+                  <a:IsInternal>false</a:IsInternal>
+                  <a:RuleId i:nil="true"/>
+                  <a:RuleInstanceId i:nil="true"/>
+                  <a:RuleName i:nil="true"/>
+                  <a:Tag i:nil="true"/>
+                  <a:Validation>^(true|false|1|0|Yes|No|N|Y)$</a:Validation>
+                  <a:ValidationMessage>Value equal N-No  or Y-Yes</a:ValidationMessage>
+                  <a:Value i:nil="true"/>
+               </a:InputDto>
+               <a:InputDto>
+                  <a:DataTypeId>3</a:DataTypeId>
+                  <a:DisplayName>Leased Vehicle</a:DisplayName>
+                  <a:InputDescription>This flag indicates whether or not the vehicle on the order is leased</a:InputDescription>
+                  <a:InputId>69</a:InputId>
+                  <a:InputName>Leased.Vehicle</a:InputName>
+                  <a:IsEnumerated>false</a:IsEnumerated>
+                  <a:IsInternal>false</a:IsInternal>
+                  <a:RuleId i:nil="true"/>
+                  <a:RuleInstanceId i:nil="true"/>
+                  <a:RuleName i:nil="true"/>
+                  <a:Tag i:nil="true"/>
+                  <a:Validation>^(true|false|1|0|Yes|No|N|Y)$</a:Validation>
+                  <a:ValidationMessage>Boolean value</a:ValidationMessage>
+                  <a:Value i:nil="true"/>
+               </a:InputDto>
+               <a:InputDto>
+                  <a:DataTypeId>1</a:DataTypeId>
+                  <a:DisplayName>Store City</a:DisplayName>
+                  <a:InputDescription>The City for the Store location's address.</a:InputDescription>
+                  <a:InputId>13</a:InputId>
+                  <a:InputName>Store.City</a:InputName>
+                  <a:IsEnumerated>false</a:IsEnumerated>
+                  <a:IsInternal>false</a:IsInternal>
+                  <a:RuleId i:nil="true"/>
+                  <a:RuleInstanceId i:nil="true"/>
+                  <a:RuleName i:nil="true"/>
+                  <a:Tag i:nil="true"/>
+                  <a:Validation i:nil="true"/>
+                  <a:ValidationMessage>The City for the store location is missing or invalid. Solution: The City may not exists or is invalid for the store state code chosen. Call Solution Center.</a:ValidationMessage>
+                  <a:Value>Charlottesville</a:Value>
+               </a:InputDto>
+               <a:InputDto>
+                  <a:DataTypeId>6</a:DataTypeId>
+                  <a:DisplayName>Appraisal Amount</a:DisplayName>
+                  <a:InputDescription>The amount offered for the trade-in vehicle.</a:InputDescription>
+                  <a:InputId>9</a:InputId>
+                  <a:InputName>Appraisal.Amount</a:InputName>
+                  <a:IsEnumerated>false</a:IsEnumerated>
+                  <a:IsInternal>false</a:IsInternal>
+                  <a:RuleId i:nil="true"/>
+                  <a:RuleInstanceId i:nil="true"/>
+                  <a:RuleName i:nil="true"/>
+                  <a:Tag>1</a:Tag>
+                  <a:Validation>^\d*(\.\d{0,4})?$</a:Validation>
+                  <a:ValidationMessage>The amount of the appraisal offer must be an amount greater than or equal to $0. Solution: Appraisal offer is $0 when order does not include a trade-in. If order includes trade-in, then the system could not determined appraisal offer amount. Call Solution</a:ValidationMessage>
+                  <a:Value>5000</a:Value>
+               </a:InputDto>
+               <a:InputDto>
+                  <a:DataTypeId>6</a:DataTypeId>
+                  <a:DisplayName>Appraisal Amount</a:DisplayName>
+                  <a:InputDescription>The amount offered for the trade-in vehicle.</a:InputDescription>
+                  <a:InputId>9</a:InputId>
+                  <a:InputName>Appraisal.Amount</a:InputName>
+                  <a:IsEnumerated>false</a:IsEnumerated>
+                  <a:IsInternal>false</a:IsInternal>
+                  <a:RuleId i:nil="true"/>
+                  <a:RuleInstanceId i:nil="true"/>
+                  <a:RuleName i:nil="true"/>
+                  <a:Tag>2</a:Tag>
+                  <a:Validation>^\d*(\.\d{0,4})?$</a:Validation>
+                  <a:ValidationMessage>The amount of the appraisal offer must be an amount greater than or equal to $0. Solution: Appraisal offer is $0 when order does not include a trade-in. If order includes trade-in, then the system could not determined appraisal offer amount. Call Solution</a:ValidationMessage>
+                  <a:Value>2000</a:Value>
+               </a:InputDto>
+               <a:InputDto>
+                  <a:DataTypeId>1</a:DataTypeId>
+                  <a:DisplayName>Customer City</a:DisplayName>
+                  <a:InputDescription>The City for the primary customer's address.</a:InputDescription>
+                  <a:InputId>15</a:InputId>
+                  <a:InputName>Customer.City</a:InputName>
+                  <a:IsEnumerated>false</a:IsEnumerated>
+                  <a:IsInternal>false</a:IsInternal>
+                  <a:RuleId i:nil="true"/>
+                  <a:RuleInstanceId i:nil="true"/>
+                  <a:RuleName i:nil="true"/>
+                  <a:Tag i:nil="true"/>
+                  <a:Validation i:nil="true"/>
+                  <a:ValidationMessage>Customer City is missing or invalid. Solution: The City may not exist or is invalid for the state chosen. Verify Customer's Address.</a:ValidationMessage>
+                  <a:Value i:nil="true"/>
+               </a:InputDto>
+               <a:InputDto>
+                  <a:DataTypeId>4</a:DataTypeId>
+                  <a:DisplayName>Vehicle Gross Weight</a:DisplayName>
+                  <a:InputDescription>The weight of the empty purchase vehicle plus the weight of the maximum load that the vehicle was designed to carry.</a:InputDescription>
+                  <a:InputId>22</a:InputId>
+                  <a:InputName>Vehicle.Gross.Weight</a:InputName>
+                  <a:IsEnumerated>false</a:IsEnumerated>
+                  <a:IsInternal>false</a:IsInternal>
+                  <a:RuleId i:nil="true"/>
+                  <a:RuleInstanceId i:nil="true"/>
+                  <a:RuleName i:nil="true"/>
+                  <a:Tag i:nil="true"/>
+                  <a:Validation>^-?(0|([1-9]\d*))*(\.\d+)?</a:Validation>
+                  <a:ValidationMessage>The gross weight must be numeric.The Gross Vehicle Weight for this vehicle may be missing in Automation. If problem persists, call Solution Center.</a:ValidationMessage>
+                  <a:Value i:nil="true"/>
+               </a:InputDto>
+               <a:InputDto>
+                  <a:DataTypeId>4</a:DataTypeId>
+                  <a:DisplayName>Transfer Gross Weight</a:DisplayName>
+                  <a:InputDescription>Transfer gross weight</a:InputDescription>
+                  <a:InputId>34</a:InputId>
+                  <a:InputName>Transfer.Gross.Weight</a:InputName>
+                  <a:IsEnumerated>false</a:IsEnumerated>
+                  <a:IsInternal>false</a:IsInternal>
+                  <a:RuleId i:nil="true"/>
+                  <a:RuleInstanceId i:nil="true"/>
+                  <a:RuleName i:nil="true"/>
+                  <a:Tag i:nil="true"/>
+                  <a:Validation>^-?(0|([1-9]\d*))*(\.\d+)?</a:Validation>
+                  <a:ValidationMessage>The weight of the vehicle being transferred must be numeric. Solution: The gross weight for the transfer vehicle may be missing. Verify gross transfer weight. If problem persists, Call the Solution Center.</a:ValidationMessage>
+                  <a:Value i:nil="true"/>
+               </a:InputDto>
+               <a:InputDto>
+                  <a:DataTypeId>9</a:DataTypeId>
+                  <a:DisplayName>Vehicle Class</a:DisplayName>
+                  <a:InputDescription>A code used to categorize vehicles by type.</a:InputDescription>
+                  <a:InputId>20</a:InputId>
+                  <a:InputName>Vehicle.Class</a:InputName>
+                  <a:IsEnumerated>false</a:IsEnumerated>
+                  <a:IsInternal>false</a:IsInternal>
+                  <a:RuleId i:nil="true"/>
+                  <a:RuleInstanceId i:nil="true"/>
+                  <a:RuleName i:nil="true"/>
+                  <a:Tag i:nil="true"/>
+                  <a:Validation>^0|[1-9]0|[4-6,8]5$</a:Validation>
+                  <a:ValidationMessage>The class code for the purchase vehicle must equal 45, 50, 55, 60, 65, 70, 80 or 90. Vehicle class data may be missing or invalid. Call Solution Center.</a:ValidationMessage>
+                  <a:Value>45</a:Value>
+               </a:InputDto>
+               <a:InputDto>
+                  <a:DataTypeId>4</a:DataTypeId>
+                  <a:DisplayName>Vehicle Empty Weight</a:DisplayName>
+                  <a:InputDescription>The basic weight of the purchase vehicle plus all fluids necessary for operation such as engine oil, engine coolant, water excluding usable fuel and the payload.</a:InputDescription>
+                  <a:InputId>21</a:InputId>
+                  <a:InputName>Vehicle.Empty.Weight</a:InputName>
+                  <a:IsEnumerated>false</a:IsEnumerated>
+                  <a:IsInternal>false</a:IsInternal>
+                  <a:RuleId i:nil="true"/>
+                  <a:RuleInstanceId i:nil="true"/>
+                  <a:RuleName i:nil="true"/>
+                  <a:Tag i:nil="true"/>
+                  <a:Validation>^-?(0|([1-9]\d*))*(\.\d+)?</a:Validation>
+                  <a:ValidationMessage>The empty weight must be numeric. Empty Weight for this vehicle may be missing in Automation. If problem persists, call the Solution Center.</a:ValidationMessage>
+                  <a:Value>4000</a:Value>
+               </a:InputDto>
+               <a:InputDto>
+                  <a:DataTypeId>1</a:DataTypeId>
+                  <a:DisplayName>Manufacturer Fuel Type</a:DisplayName>
+                  <a:InputDescription>Fuel type captured from R.L.Polk data service call</a:InputDescription>
+                  <a:InputId>140</a:InputId>
+                  <a:InputName>Manufacturer.Fuel.Type</a:InputName>
+                  <a:IsEnumerated>false</a:IsEnumerated>
+                  <a:IsInternal>false</a:IsInternal>
+                  <a:RuleId i:nil="true"/>
+                  <a:RuleInstanceId i:nil="true"/>
+                  <a:RuleName i:nil="true"/>
+                  <a:Tag i:nil="true"/>
+                  <a:Validation i:nil="true"/>
+                  <a:ValidationMessage>Ensure fuel type exists for vehicle</a:ValidationMessage>
+                  <a:Value>Gas</a:Value>
+               </a:InputDto>
+               <a:InputDto>
+                  <a:DataTypeId>3</a:DataTypeId>
+                  <a:DisplayName>Personalized Plate</a:DisplayName>
+                  <a:InputDescription>A value that indicates if the plate selection includes Personalized plates.</a:InputDescription>
+                  <a:InputId>48</a:InputId>
+                  <a:InputName>Personalized.Plate</a:InputName>
+                  <a:IsEnumerated>false</a:IsEnumerated>
+                  <a:IsInternal>false</a:IsInternal>
+                  <a:RuleId i:nil="true"/>
+                  <a:RuleInstanceId i:nil="true"/>
+                  <a:RuleName i:nil="true"/>
+                  <a:Tag i:nil="true"/>
+                  <a:Validation>^(true|false|1|0|Yes|No|N|Y)$</a:Validation>
+                  <a:ValidationMessage>Value equal N-No  or Y-Yes</a:ValidationMessage>
+                  <a:Value>Y</a:Value>
+               </a:InputDto>
+               <a:InputDto>
+                  <a:DataTypeId>4</a:DataTypeId>
+                  <a:DisplayName>Transfer Empty Weight</a:DisplayName>
+                  <a:InputDescription>The empty weight of the vehicle from which the plate is being transferred.</a:InputDescription>
+                  <a:InputId>83</a:InputId>
+                  <a:InputName>Transfer.Empty.Weight</a:InputName>
+                  <a:IsEnumerated>false</a:IsEnumerated>
+                  <a:IsInternal>false</a:IsInternal>
+                  <a:RuleId i:nil="true"/>
+                  <a:RuleInstanceId i:nil="true"/>
+                  <a:RuleName i:nil="true"/>
+                  <a:Tag i:nil="true"/>
+                  <a:Validation>^-?(0|([1-9]\d*))*(\.\d+)?</a:Validation>
+                  <a:ValidationMessage>The weight of the vehicle being transferred must be numeric. Solution: The empty weight for the transfer vehicle may be missing. Verify empty transfer weight. If problem persists, Call the Solution Center.</a:ValidationMessage>
+                  <a:Value i:nil="true"/>
+               </a:InputDto>
+               <a:InputDto>
+                  <a:DataTypeId>1</a:DataTypeId>
+                  <a:DisplayName>Transfer Vehicle Class Code</a:DisplayName>
+                  <a:InputDescription>This is the body style of the vehicle for the transfer registration.</a:InputDescription>
+                  <a:InputId>216</a:InputId>
+                  <a:InputName>Transfer.Vehicle.Class.Code</a:InputName>
+                  <a:IsEnumerated>false</a:IsEnumerated>
+                  <a:IsInternal>false</a:IsInternal>
+                  <a:RuleId i:nil="true"/>
+                  <a:RuleInstanceId i:nil="true"/>
+                  <a:RuleName i:nil="true"/>
+                  <a:Tag i:nil="true"/>
+                  <a:Validation i:nil="true"/>
+                  <a:ValidationMessage>Value equal C-Car  or T-Truck</a:ValidationMessage>
+                  <a:Value i:nil="true"/>
+               </a:InputDto>
+               <a:InputDto>
+                  <a:DataTypeId>10</a:DataTypeId>
+                  <a:DisplayName>Current License Expiration Date</a:DisplayName>
+                  <a:InputDescription>The date that the transfer license is no longer valid.</a:InputDescription>
+                  <a:InputId>23</a:InputId>
+                  <a:InputName>Current.License.Expiration.Date</a:InputName>
+                  <a:IsEnumerated>false</a:IsEnumerated>
+                  <a:IsInternal>false</a:IsInternal>
+                  <a:RuleId i:nil="true"/>
+                  <a:RuleInstanceId i:nil="true"/>
+                  <a:RuleName i:nil="true"/>
+                  <a:Tag i:nil="true"/>
+                  <a:Validation i:nil="true"/>
+                  <a:ValidationMessage>The registration expiration date is missing or invalid. Verify plate and registration options for transfer plate.</a:ValidationMessage>
+                  <a:Value>03/01/2020</a:Value>
+               </a:InputDto>
+               <a:InputDto>
+                  <a:DataTypeId>3</a:DataTypeId>
+                  <a:DisplayName>Eligible For Sales Tax</a:DisplayName>
+                  <a:InputDescription>This flag indicates that the OOS customer is eligible for instate sales tax.</a:InputDescription>
+                  <a:InputId>115</a:InputId>
+                  <a:InputName>Eligible.For.Sales.Tax</a:InputName>
+                  <a:IsEnumerated>false</a:IsEnumerated>
+                  <a:IsInternal>false</a:IsInternal>
+                  <a:RuleId i:nil="true"/>
+                  <a:RuleInstanceId i:nil="true"/>
+                  <a:RuleName i:nil="true"/>
+                  <a:Tag i:nil="true"/>
+                  <a:Validation>^(true|false|1|0|Yes|No|N|Y)$</a:Validation>
+                  <a:ValidationMessage>Value equal N-No  or Y-Yes</a:ValidationMessage>
+                  <a:Value>Y</a:Value>
+               </a:InputDto>
+               <a:InputDto>
+                  <a:DataTypeId>3</a:DataTypeId>
+                  <a:DisplayName>Plate Missing Flag</a:DisplayName>
+                  <a:InputDescription>This flag indicates that the purchase vehicle is missing a plate.</a:InputDescription>
+                  <a:InputId>78</a:InputId>
+                  <a:InputName>Plate.Missing.Flag</a:InputName>
+                  <a:IsEnumerated>false</a:IsEnumerated>
+                  <a:IsInternal>false</a:IsInternal>
+                  <a:RuleId i:nil="true"/>
+                  <a:RuleInstanceId i:nil="true"/>
+                  <a:RuleName i:nil="true"/>
+                  <a:Tag i:nil="true"/>
+                  <a:Validation>^(true|false|1|0|Yes|No|N|Y)$</a:Validation>
+                  <a:ValidationMessage>Value equal N-No  or Y-Yes</a:ValidationMessage>
+                  <a:Value i:nil="true"/>
+               </a:InputDto>
+               <a:InputDto>
+                  <a:DataTypeId>1</a:DataTypeId>
+                  <a:DisplayName>License Plate Selection</a:DisplayName>
+                  <a:InputDescription>The type of license plate purchased for the vehicle (Standard, Heritage, Scenic, Personized, etc.)</a:InputDescription>
+                  <a:InputId>27</a:InputId>
+                  <a:InputName>License.Plate.Selection</a:InputName>
+                  <a:IsEnumerated>true</a:IsEnumerated>
+                  <a:IsInternal>false</a:IsInternal>
+                  <a:RuleId>51605</a:RuleId>
+                  <a:RuleInstanceId>49955</a:RuleInstanceId>
+                  <a:RuleName>Standard Plate</a:RuleName>
+                  <a:Tag i:nil="true"/>
+                  <a:Validation i:nil="true"/>
+                  <a:ValidationMessage>License Plate Selection missing or invalid for the registration chosen. Solution: Verify plate and registration options. If problem persists, Call the Solution Center.</a:ValidationMessage>
+                  <a:Value>0</a:Value>
+               </a:InputDto>
+               <a:InputDto>
+                  <a:DataTypeId>1</a:DataTypeId>
+                  <a:DisplayName>License Plate Selection Transfer</a:DisplayName>
+                  <a:InputDescription>The type of transferred license plate</a:InputDescription>
+                  <a:InputId>116</a:InputId>
+                  <a:InputName>License.Plate.Selection.Transfer</a:InputName>
+                  <a:IsEnumerated>true</a:IsEnumerated>
+                  <a:IsInternal>false</a:IsInternal>
+                  <a:RuleId>51606</a:RuleId>
+                  <a:RuleInstanceId>49956</a:RuleInstanceId>
+                  <a:RuleName>Standard Plate</a:RuleName>
+                  <a:Tag i:nil="true"/>
+                  <a:Validation i:nil="true"/>
+                  <a:ValidationMessage>Transfer License Plate Selection missing or invalid for the registration chosen. Solution: Verify plate and registration options. If problem persists, Call the Solution Center.</a:ValidationMessage>
+                  <a:Value>0</a:Value>
+               </a:InputDto>
+               <a:InputDto>
+                  <a:DataTypeId>1</a:DataTypeId>
+                  <a:DisplayName>License Plate Selection Transfer</a:DisplayName>
+                  <a:InputDescription>The type of transferred license plate</a:InputDescription>
+                  <a:InputId>116</a:InputId>
+                  <a:InputName>License.Plate.Selection.Transfer</a:InputName>
+                  <a:IsEnumerated>true</a:IsEnumerated>
+                  <a:IsInternal>false</a:IsInternal>
+                  <a:RuleId>51607</a:RuleId>
+                  <a:RuleInstanceId>49957</a:RuleInstanceId>
+                  <a:RuleName>Specialty Plate</a:RuleName>
+                  <a:Tag i:nil="true"/>
+                  <a:Validation i:nil="true"/>
+                  <a:ValidationMessage>Transfer License Plate Selection missing or invalid for the registration chosen. Solution: Verify plate and registration options. If problem persists, Call the Solution Center.</a:ValidationMessage>
+                  <a:Value>51607</a:Value>
+               </a:InputDto>
+               <a:InputDto>
+                  <a:DataTypeId>1</a:DataTypeId>
+                  <a:DisplayName>License Plate Selection Transfer</a:DisplayName>
+                  <a:InputDescription>The type of transferred license plate</a:InputDescription>
+                  <a:InputId>116</a:InputId>
+                  <a:InputName>License.Plate.Selection.Transfer</a:InputName>
+                  <a:IsEnumerated>true</a:IsEnumerated>
+                  <a:IsInternal>false</a:IsInternal>
+                  <a:RuleId>51608</a:RuleId>
+                  <a:RuleInstanceId>49958</a:RuleInstanceId>
+                  <a:RuleName>Specialty Plate</a:RuleName>
+                  <a:Tag i:nil="true"/>
+                  <a:Validation i:nil="true"/>
+                  <a:ValidationMessage>Transfer License Plate Selection missing or invalid for the registration chosen. Solution: Verify plate and registration options. If problem persists, Call the Solution Center.</a:ValidationMessage>
+                  <a:Value>25.0000000000</a:Value>
+               </a:InputDto>
+            </a:Inputs>
+            <a:DebugOutput>true</a:DebugOutput>
+            <a:InternalRules>true</a:InternalRules>
+            <a:UncalculatedRules>true</a:UncalculatedRules>
+         </request>
+      </Calculate>
+   </s:Body>
+</s:Envelope>
