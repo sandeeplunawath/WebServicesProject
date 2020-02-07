@@ -33,6 +33,9 @@ public class SOAP_WorkingCode {
 	 * SOAP Request information , verify in SOAP UI, tool, in RAW tab, and update the below information.
 	 * sometimes need to add certificate in jre by using keytool command in command-prompt
 	 * we can download certificate from chrome browser as well
+	 * 
+	 * 
+c:\Program Files\Java\jdk1.8.0_231\bin>keytool -importcert -file C:\Users\9502658\Documents\TAFE\POC\Certificate\testdemo1.cer -alias demo -keystore "C:\Program Files\Java\jdk1.8.0_231\jre\lib\security\cacerts"
 	 */
 	
 	

@@ -1,0 +1,50 @@
+1. Enable TCP/IP Protocol. 
+
+Goto Start --> SQL Server Configuration Manager -->Sql Server Network Configuration -->Double Click TCP/IP - Enable--> OK
+
+2. Make sure SQL Server Browser Service is running
+
+Goto Services --> Search for SQL Server Browser --> Turn it on if it is not running
+
+3. Download JDBC driver from this location. Make sure you donwload from this location only instead of directly downloading JREs from different sites. Microsoft provides complete package of all the files in a single folder.
+Note: download as per the version of java installed in the machine
+Link - https://docs.microsoft.com/en-us/sql/connect/jdbc/microsoft-jdbc-driver-for-sql-server?view=sql-server-2017
+
+
+4. There are lot of version for JDBC. I have tried the lowest version JDBC 4.1 to the latest JDK. So it should'nt be a problem downloading any one of them
+
+
+5. Once you download, run the sqljdbc_4.1.8112.200_enu.exe (for JDBC 4.1). For different version, file name differs
+
+6. It asks to extract file. Make sure you extract in C Driver with folder name as 'Microsoft JDBC Driver 4.1 for SQL Server' (for version 4.1)
+
+7.  (Most important step) Go inside this folder (C:\Microsoft JDBC Driver 4.1 for SQL Server\sqljdbc_4.1\enu\auth\x64) and copy sqljdbc_auth.dll. For 64 bit select x64 and for 32 bit select x86
+
+8. Paste the above dll in the jre bin location. Here is the example: C:\Program Files\Java\jre1.8.0_201\bin
+
+So you are done with all the settings
+
+9. Now comes the connection string. Build the connection string like the below. Just replace TestServer and TestDB with your server name and database name.
+
+Windows Authentication
+
+jdbc:sqlserver://PC01\\inst01;database=TestDB;integratedSecurity=true;
+
+SQL Server Authentication
+
+jdbc:sqlserver://PC01\\inst01;database=TestDB;
+
+How to check SQL Server Installed in the machine:
+Type below command in SSMS
+SELECT @@VERSION AS 'SQL Server Version';  
+
+Error:
+Cannot connect to WMI provider. You do not have permission or the server is unreachable. Note that you can only manage SQL Server 2005 and later servers with SQL Server Configuration Manager.
+Invalid namespace [0x8004100e]
+
+Resolution:
+
+run below command in command prompt (Open command prompt as "Run as administator ")
+
+mofcomp "%programfiles(x86)%\Microsoft SQL Server\number\Shared\sqlmgmproviderxpsp2up.mof"
+
