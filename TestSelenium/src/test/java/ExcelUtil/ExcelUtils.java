@@ -27,7 +27,7 @@ public class ExcelUtils {
 //	String storeId = "";
 //	String effectiveDate = "";
 //	String Status_check = "";
-	String[] inputDetails = new String[] {"Scenario","Store_State","Customer_State","Store_Location_Number","Effective_Date","Status"};
+	String[] inputDetails = new String[] {"Scenario","employee_State","Customer_State","employee_Location_Number","Effective_Date","Status"};
 	static HashMap<String, HashMap<String, String>> inputExcelDetails = new HashMap<String, HashMap<String, String>>();
 
 	ExcelUtils(String excelFileName)
